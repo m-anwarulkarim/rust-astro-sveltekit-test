@@ -6,7 +6,7 @@
   import Header from '$lib/components/layout/Header.svelte';
   import { isSidebarCollapsed } from '$lib/stores/sidebarStore';
 
-  $: isLoginPage = $page.url.pathname === '/login';
+  $: isLoginPage = $page.url.pathname.replace(/\/$/, '') === '/login';
 
   function handleLogout() {
     if (typeof window !== 'undefined') {

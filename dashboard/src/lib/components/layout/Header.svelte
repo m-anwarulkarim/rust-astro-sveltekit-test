@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { toggleSidebar, isSidebarCollapsed } from '$lib/stores/sidebarStore';
+  import { env } from '$lib/env';
 
   export let adminUser: string = 'Master Administrator';
 
@@ -37,7 +38,7 @@
     <!-- Right: Quick Store Link & Admin Profile -->
     <div class="flex items-center gap-4 sm:gap-6">
       <a 
-        href="http://localhost:4321" 
+        href={env.PUBLIC_LANDING_URL} 
         target="_blank" 
         class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[var(--accent-gold)] hover:text-slate-900 transition-colors"
       >

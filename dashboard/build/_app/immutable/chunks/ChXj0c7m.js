@@ -1,1 +1,0 @@
-const s={BASE_URL:"./",DEV:!1,MODE:"production",PROD:!0,SSR:!1},c=()=>{try{const a=(s==null?void 0:s.PUBLIC_API_BASE_URL)||(s==null?void 0:s.VITE_PUBLIC_API_BASE_URL);if(a)return a}catch{}return"https://aureliaapi.haqplus.com/api/v1"},A={PUBLIC_API_BASE_URL:c()};export{A as e};

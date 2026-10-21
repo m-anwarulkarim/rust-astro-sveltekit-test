@@ -1,5 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
+  import { env } from '$lib/env';
   export let adminUser: string = 'Master Administrator';
 
   const dispatch = createEventDispatcher();
@@ -20,7 +21,7 @@
     </div>
 
     <div class="flex items-center gap-6">
-      <a href="http://localhost:4321" target="_blank" class="text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
+      <a href={env.PUBLIC_LANDING_URL} target="_blank" class="text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
         <span>View Public Store</span>
         ↗
       </a>

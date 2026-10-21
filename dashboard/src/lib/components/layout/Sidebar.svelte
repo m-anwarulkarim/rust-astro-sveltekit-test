@@ -83,7 +83,9 @@
   <!-- Navigation Menu -->
   <nav class="flex-1 py-6 px-3 space-y-2 overflow-y-auto">
     {#each navItems as item}
-      {@const isActive = $page.url.pathname === item.path}
+      {@const currentPath = $page.url.pathname.replace(/\/$/, '') || '/'}
+      {@const itemPath = item.path.replace(/\/$/, '') || '/'}
+      {@const isActive = currentPath === itemPath}
       <a 
         href={item.path}
         data-sveltekit-preload-code="eager"
