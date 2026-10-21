@@ -11,4 +11,4 @@ ENVIRONMENT = "production"
 [[d1_databases]]
 binding = "DB"
 database_name = "shoes_db"
-database_id = "local-shoes-db"
+database_id = "4c980f7b-23d7-4128-8ab3-07fa7f9d2e90"
