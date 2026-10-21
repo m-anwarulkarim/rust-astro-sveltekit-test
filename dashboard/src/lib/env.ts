@@ -9,7 +9,7 @@ const getApiBaseUrl = (): string => {
   } catch {
     // Fallback if import.meta.env is unavailable
   }
-  return 'http://localhost:8085/api/v1';
+  return 'https://aureliaapi.haqplus.com/api/v1';
 };
 
 export const env: DashboardEnvConfig = {

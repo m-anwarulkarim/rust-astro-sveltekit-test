@@ -3,7 +3,7 @@ export interface AstroEnvConfig {
 }
 
 const parseEnv = (): AstroEnvConfig => {
-  const publicApiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:8085/api/v1';
+  const publicApiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'https://aureliaapi.haqplus.com/api/v1';
 
   return {
     PUBLIC_API_BASE_URL: publicApiUrl,
