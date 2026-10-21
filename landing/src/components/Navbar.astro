@@ -1,0 +1,121 @@
+---
+---
+
+<header class="glass-panel sticky top-0 z-40 border-b border-[var(--border-color)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 text-decoration-none group">
+      <img src="/favicon.svg" alt="Aurelia Logo" class="w-9 h-9 sm:w-10 sm:h-10 group-hover:scale-105 transition-transform" />
+      <div>
+        <span class="font-serif text-xl sm:text-2xl tracking-wider font-bold text-slate-900 block leading-tight">AURELIA</span>
+        <span class="text-[9px] sm:text-[10px] tracking-[0.25em] text-[var(--accent-gold)] uppercase font-semibold block">Artisanal Footwear</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-700">
+      <a href="#collection" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none">Collection</a>
+      <a href="#craftsmanship" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none">Craftsmanship</a>
+      <a href="#reviews" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none">Reviews</a>
+      <a href="#faq" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none">FAQ</a>
+      <a href="#track-order" onclick="event.preventDefault(); window.openTrackModal();" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--accent-gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <span>Track Order</span>
+      </a>
+      <a href="http://localhost:5173" target="_blank" class="hover:text-[var(--accent-gold)] transition-colors text-decoration-none flex items-center gap-1">
+        <span>Admin Dashboard</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Action Buttons -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      <a href="#collection" class="btn-gold hidden sm:inline-flex text-xs uppercase font-bold">
+        Explore Catalog
+      </a>
+      
+      <!-- Mobile Hamburger Toggle Button -->
+      <button 
+        class="md:hidden p-2.5 rounded-xl border border-slate-200 text-slate-800 hover:bg-slate-100 transition-colors flex items-center justify-center" 
+        id="mobile-menu-btn" 
+        onclick="window.toggleMobileMenu()" 
+        aria-label="Toggle Navigation Menu"
+      >
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer & Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-30 hidden md:hidden" onclick="window.toggleMobileMenu()"></div>
+
+  <div id="mobile-menu-drawer" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-[var(--border-color)] px-6 py-6 space-y-4 shadow-2xl relative z-40">
+    <nav class="flex flex-col gap-3 text-sm font-semibold text-slate-800">
+      <a href="#collection" onclick="window.toggleMobileMenu()" class="mobile-link py-2.5 border-b border-slate-100 hover:text-[var(--accent-gold)] transition-colors flex items-center justify-between">
+        <span>The Collection</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#craftsmanship" onclick="window.toggleMobileMenu()" class="mobile-link py-2.5 border-b border-slate-100 hover:text-[var(--accent-gold)] transition-colors flex items-center justify-between">
+        <span>Craftsmanship</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#reviews" onclick="window.toggleMobileMenu()" class="mobile-link py-2.5 border-b border-slate-100 hover:text-[var(--accent-gold)] transition-colors flex items-center justify-between">
+        <span>Client Reviews</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#faq" onclick="window.toggleMobileMenu()" class="mobile-link py-2.5 border-b border-slate-100 hover:text-[var(--accent-gold)] transition-colors flex items-center justify-between">
+        <span>Concierge FAQ</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#track-order" onclick="event.preventDefault(); window.openTrackModal(); window.toggleMobileMenu();" class="mobile-link py-2.5 border-b border-slate-100 hover:text-[var(--accent-gold)] transition-colors flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--accent-gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <span>Track Order Status</span>
+      </a>
+      <a href="http://localhost:5173" target="_blank" onclick="window.toggleMobileMenu()" class="mobile-link py-2.5 text-[var(--accent-gold)] font-bold flex items-center justify-between">
+        <span>Admin Dashboard Portal</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </nav>
+    <div class="pt-2">
+      <a href="#collection" onclick="window.toggleMobileMenu()" class="btn-gold justify-center w-full py-3 text-xs uppercase font-bold">
+        <span>Explore Catalogue</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  window.toggleMobileMenu = function() {
+    const drawer = document.getElementById('mobile-menu-drawer');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    if (drawer) {
+      drawer.classList.toggle('hidden');
+    }
+    if (overlay) {
+      overlay.classList.toggle('hidden');
+    }
+  };
+
+  function setupNav() {
+    const btn = document.getElementById('mobile-menu-btn');
+    if (btn) {
+      btn.onclick = window.toggleMobileMenu;
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNav);
+  } else {
+    setupNav();
+  }
+</script>

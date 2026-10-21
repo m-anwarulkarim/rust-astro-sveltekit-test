@@ -1,0 +1,55 @@
+---
+const faqs = [
+  {
+    q: "How does Cash on Delivery (COD) work?",
+    a: "We offer 100% Free Express Cash on Delivery across Bangladesh. Once you place an order, our concierge team will call to confirm your preferred time, and you pay only after inspecting the footwear package."
+  },
+  {
+    q: "How do I choose the correct EU shoe size?",
+    a: "Aurelia footwear follows standard European sizing (EU 39 to 44). If you are between sizes or have a wider foot, we recommend choosing one size larger. You can also try your pair at delivery!"
+  },
+  {
+    q: "What leather is used in Aurelia shoes?",
+    a: "We use 100% full-grain Tuscan calfskin leather, vegetable-tanned in Florence. The lining is made of ultra-soft breathable aniline leather for moisture control and plush comfort."
+  },
+  {
+    q: "What is your exchange and return policy?",
+    a: "We provide an instant 7-day hassle-free size exchange policy. If the size does not fit perfectly, our delivery courier will exchange it for your ideal size free of charge."
+  }
+];
+---
+
+<section id="faq" class="py-24 bg-[#F4EFE6] border-t border-[var(--border-color)]">
+  <div class="max-w-4xl mx-auto px-6 space-y-12">
+    
+    <div class="text-center space-y-4">
+      <span class="text-xs uppercase tracking-[0.25em] font-bold text-[var(--accent-gold)] block">
+        Concierge Guidance
+      </span>
+      <h2 class="font-serif text-4xl sm:text-5xl font-extrabold text-slate-900">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-slate-600 text-sm font-light">
+        Everything you need to know about our artisanal craftsmanship, delivery concierge, and sizing.
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="space-y-4">
+      {faqs.map((item, idx) => (
+        <details class="group bg-white rounded-2xl border border-[var(--border-color)] p-6 shadow-sm cursor-pointer transition-all">
+          <summary class="flex items-center justify-between font-serif font-bold text-slate-900 text-base sm:text-lg list-none">
+            <span>{item.q}</span>
+            <span class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform font-bold text-xs">
+              ▼
+            </span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 font-light pt-4 leading-relaxed border-t border-slate-100 mt-4">
+            {item.a}
+          </p>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

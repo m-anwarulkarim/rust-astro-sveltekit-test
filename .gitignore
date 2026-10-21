@@ -1,0 +1,37 @@
+# Rust build artifacts
+backend/target/
+**/target/
+**/*.rs.bk
+Cargo.lock
+
+# Node dependencies
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and Secrets (CRITICAL: Do not commit credentials)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Astro & SvelteKit build outputs
+.astro/
+**/.astro/
+dist/
+**/dist/
+.svelte-kit/
+**/.svelte-kit/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,132 @@
+---
+import ShoeCard from './ShoeCard.astro';
+
+const products = [
+  {
+    id: "1",
+    title: "Aurelia Royal Gold Sneaker",
+    subtitle: "Handcrafted Italian Calfskin & Gold Trim",
+    description: "Experience unprecedented luxury with the Aurelia Royal Gold Sneaker. Crafted with full-grain Italian leather, champagne gold metallic accents, and an ergonomically sculpted ultra-light midsole.",
+    price: 3500,
+    original_price: 4200,
+    category: "Luxury Sneakers",
+    image_url: "/shoes/aurelia.jpg",
+    badge: "Bestseller",
+    sizes: [39, 40, 41, 42, 43, 44],
+    colors: ["Champagne Gold", "Obsidian Onyx", "Ivory White"],
+    stock: 30
+  },
+  {
+    id: "2",
+    title: "Monarch Imperial Oxford",
+    subtitle: "Hand-Burnished Burgundy Leather",
+    description: "Tailored for the distinguished gentleman. Handcrafted Goodyear-welted sole with rich velvet lining and hand-burnished mahogany finish.",
+    price: 4500,
+    original_price: 5500,
+    category: "Formal Dress",
+    image_url: "/shoes/monarch.jpg",
+    badge: "Limited Edition",
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Mahogany Burgundy", "Midnight Black"],
+    stock: 18
+  },
+  {
+    id: "3",
+    title: "Vanguard Phantom Runner",
+    subtitle: "Cognac Suede & Sculpted Cushioned Sole",
+    description: "Fusing urban sophistication with athletic comfort. Features breathable perforations, cognac suede overlays, and gold foil heel branding.",
+    price: 2950,
+    original_price: 3600,
+    category: "Urban Athleisure",
+    image_url: "/shoes/vanguard.jpg",
+    badge: "New Release",
+    sizes: [39, 40, 41, 42, 43],
+    colors: ["Cognac Suede", "Ivory White"],
+    stock: 25
+  },
+  {
+    id: "4",
+    title: "Sovereign Velvet Loafer",
+    subtitle: "Royal Indigo Velvet with Embroidered Crest",
+    description: "Slip into pure decadence. Plush royal indigo velvet featuring custom golden thread crest embroidery and hand-stitched leather soles.",
+    price: 3800,
+    original_price: 4600,
+    category: "Velvet Loafers",
+    image_url: "/shoes/sovereign.jpg",
+    badge: "Premium Choice",
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Royal Indigo Velvet", "Emerald Velvet"],
+    stock: 15
+  }
+];
+
+const categories = ["All Collection", "Luxury Sneakers", "Formal Dress", "Urban Athleisure", "Velvet Loafers"];
+---
+
+<section id="collection" class="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)]">
+  <div class="max-w-7xl mx-auto px-6 space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center space-y-4 max-w-2xl mx-auto">
+      <span class="text-xs uppercase tracking-[0.25em] font-bold text-[var(--accent-gold)] block">
+        Curated Catalogue
+      </span>
+      <h2 class="font-serif text-4xl sm:text-5xl font-extrabold text-slate-900">
+        The Royal Footwear Collection
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base font-light">
+        Each pair is meticulously handcrafted by master cordwainers in Florence using ethically sourced full-grain leather.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      {categories.map((cat, idx) => (
+        <button
+          class={`filter-tab px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all border ${idx === 0 ? 'bg-slate-900 text-amber-300 border-slate-900 shadow-md' : 'bg-white text-slate-700 border-[var(--border-color)] hover:border-[var(--accent-gold)]'}`}
+          data-category={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-4">
+      {products.map(item => (
+        <ShoeCard {...item} />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Category Filtering Logic
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('[data-category]');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('bg-slate-900', 'text-amber-300', 'border-slate-900', 'shadow-md');
+        t.classList.add('bg-white', 'text-slate-700', 'border-[var(--border-color)]');
+      });
+
+      tab.classList.add('bg-slate-900', 'text-amber-300', 'border-slate-900', 'shadow-md');
+      tab.classList.remove('bg-white', 'text-slate-700', 'border-[var(--border-color)]');
+
+      const selectedCategory = tab.getAttribute('data-category');
+
+      cards.forEach(card => {
+        if (card.classList.contains('filter-tab')) return;
+        const cardCat = card.getAttribute('data-category');
+        if (selectedCategory === 'All Collection' || cardCat === selectedCategory) {
+          (card as HTMLElement).style.display = 'flex';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

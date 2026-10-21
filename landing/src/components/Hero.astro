@@ -1,0 +1,94 @@
+---
+---
+
+<section class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2]">
+  <!-- Decorative Ambient Glows -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <!-- Left Hero Text Content -->
+    <div class="order-2 lg:order-1 lg:col-span-7 space-y-8 text-left">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-[var(--border-gold)] shadow-sm backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent-gold)] animate-pulse"></span>
+        <span class="text-xs uppercase tracking-widest font-semibold text-slate-800">2026 Masterpiece Edition</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl xl:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+        Where Royal Elegance Meets <span class="text-gold-gradient italic">Artisanal Mastery</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-600 font-light leading-relaxed max-w-2xl">
+        Immerse yourself in bespoke footwear engineered from vegetable-tanned Italian calfskin, hand-burnished patinas, and ergonomic comfort designed for nobility.
+      </p>
+
+      <!-- CTA Row -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#collection" class="btn-gold text-sm py-4 px-8 shadow-xl hover:shadow-2xl">
+          <span>Shop Royal Collection</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a href="#craftsmanship" class="btn-outline text-sm py-4 px-8">
+          Discover Our Craft
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-serif text-2xl font-bold text-slate-900">100%</h4>
+          <p class="text-xs text-slate-500 font-medium">Italian Full-Grain Leather</p>
+        </div>
+        <div>
+          <h4 class="font-serif text-2xl font-bold text-slate-900">4.9 ★</h4>
+          <p class="text-xs text-slate-500 font-medium">From 1,200+ Discerning Clients</p>
+        </div>
+        <div>
+          <h4 class="font-serif text-2xl font-bold text-slate-900">Free COD</h4>
+          <p class="text-xs text-slate-500 font-medium">Nationwide Express Delivery</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Hero Visual Showcase -->
+    <div class="order-1 lg:order-2 lg:col-span-5 relative">
+      <div class="relative mx-auto max-w-md lg:max-w-none">
+        <!-- Golden Frame Border -->
+        <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#D4AF37]/30 via-amber-100/40 to-transparent blur-lg"></div>
+
+        <!-- Main Product Card Showcase -->
+        <div class="relative bg-white rounded-3xl p-6 shadow-2xl border border-[var(--border-color)] overflow-hidden group">
+          <div class="absolute top-6 left-6 bg-[var(--accent-gold)] text-slate-950 font-bold text-xs uppercase px-3 py-1.5 rounded-full z-10 shadow-md">
+            Featured Sovereign Edition
+          </div>
+
+          <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-50 relative flex items-center justify-center">
+            <img 
+              src="/shoes/aurelia.jpg" 
+              alt="Aurelia Royal Gold Sneaker"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+          </div>
+
+          <div class="pt-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif text-2xl font-bold text-slate-900">Aurelia Royal Gold</h3>
+              <span class="font-serif text-2xl font-bold text-[var(--accent-gold)]">৳ 3,500</span>
+            </div>
+            <p class="text-xs text-slate-500 font-normal">Handcrafted Italian Calfskin with 24K Electroplated Gold Trim</p>
+            
+            <button 
+              onclick="window.openOrderModal('Aurelia Royal Gold Sneaker', 3500, '/shoes/aurelia.jpg', '100% Full-grain Italian calfskin with champagne gold accents')"
+              class="w-full btn-gold justify-center text-sm py-3 mt-2 cursor-pointer"
+            >
+              Order This Pair Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
