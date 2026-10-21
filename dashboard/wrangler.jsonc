@@ -3,6 +3,8 @@
   "name": "aurelia-dashboard",
   "compatibility_date": "2024-10-01",
   "assets": {
-    "directory": "build"
+    "directory": "build",
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
   }
 }
