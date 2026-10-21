@@ -1,35 +1,66 @@
 ---
+import { env } from '../config/env';
+const dashboardUrl = env.PUBLIC_DASHBOARD_URL;
 ---
 
-<footer class="bg-[#F4EFE6] border-t border-[var(--border-color)] text-slate-800 pt-16 pb-12">
+<footer
+  class="bg-[#F4EFE6] border-t border-[var(--border-color)] text-slate-800 pt-16 pb-12"
+>
   <div class="max-w-7xl mx-auto px-6 space-y-12">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      
       <!-- Brand info -->
       <div class="space-y-4 md:col-span-1">
         <a href="#" class="flex items-center gap-3 text-decoration-none">
           <img src="/favicon.svg" alt="Aurelia Logo" class="w-9 h-9" />
-          <span class="font-serif text-2xl tracking-wider font-bold text-slate-900">AURELIA</span>
+          <span
+            class="font-serif text-2xl tracking-wider font-bold text-slate-900"
+            >AURELIA</span
+          >
         </a>
         <p class="text-xs text-slate-500 font-light leading-relaxed">
-          Crafting luxury footwear for executives, professionals, and connoisseurs of fine Italian leatherwork.
+          Crafting luxury footwear for executives, professionals, and
+          connoisseurs of fine Italian leatherwork.
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="font-serif font-bold text-slate-900 text-sm mb-3">Catalogue</h4>
+        <h4 class="font-serif font-bold text-slate-900 text-sm mb-3">
+          Catalogue
+        </h4>
         <ul class="space-y-2 text-xs text-slate-600 list-none p-0">
-          <li><a href="#collection" class="hover:text-[var(--accent-gold)] transition-colors">Luxury Sneakers</a></li>
-          <li><a href="#collection" class="hover:text-[var(--accent-gold)] transition-colors">Goodyear Oxfords</a></li>
-          <li><a href="#collection" class="hover:text-[var(--accent-gold)] transition-colors">Urban Athleisure</a></li>
-          <li><a href="#collection" class="hover:text-[var(--accent-gold)] transition-colors">Velvet Crest Loafers</a></li>
+          <li>
+            <a
+              href="#collection"
+              class="hover:text-[var(--accent-gold)] transition-colors"
+              >Luxury Sneakers</a>
+          </li>
+          <li>
+            <a
+              href="#collection"
+              class="hover:text-[var(--accent-gold)] transition-colors"
+              >Goodyear Oxfords</a>
+          </li>
+          <li>
+            <a
+              href="#collection"
+              class="hover:text-[var(--accent-gold)] transition-colors"
+              >Urban Athleisure</a>
+          </li>
+          <li>
+            <a
+              href="#collection"
+              class="hover:text-[var(--accent-gold)] transition-colors"
+              >Velvet Crest Loafers</a>
+          </li>
         </ul>
       </div>
 
       <!-- Concierge Support -->
       <div>
-        <h4 class="font-serif font-bold text-slate-900 text-sm mb-3">Client Concierge</h4>
+        <h4 class="font-serif font-bold text-slate-900 text-sm mb-3">
+          Client Concierge
+        </h4>
         <ul class="space-y-2 text-xs text-slate-600 list-none p-0">
           <li>Hotline: +880 1700-000000</li>
           <li>Email: concierge@aureliafootwear.com</li>
@@ -39,19 +70,34 @@
       </div>
 
       <!-- Admin Dashboard Quick Link -->
-      <div class="bg-white p-5 rounded-2xl border border-[var(--border-color)] space-y-3 shadow-sm">
-        <span class="text-[10px] uppercase font-bold tracking-wider text-[var(--accent-gold)] block">Store Admin Access</span>
-        <h5 class="font-serif font-bold text-slate-900 text-sm">Order Dashboard</h5>
-        <p class="text-xs text-slate-500">Manage orders, update dispatch statuses, and track analytics in real-time.</p>
-        <a href="http://localhost:5173" target="_blank" class="btn-gold text-xs py-2 px-4 inline-flex justify-center w-full font-bold">
+      <div
+        class="bg-white p-5 rounded-2xl border border-[var(--border-color)] space-y-3 shadow-sm"
+      >
+        <span
+          class="text-[10px] uppercase font-bold tracking-wider text-[var(--accent-gold)] block"
+          >Store Admin Access</span
+        >
+        <h5 class="font-serif font-bold text-slate-900 text-sm">
+          Order Dashboard
+        </h5>
+        <p class="text-xs text-slate-500">
+          Manage orders, update dispatch statuses, and track analytics in
+          real-time.
+        </p>
+        <a
+          href={dashboardUrl}
+          target="_blank"
+          class="btn-gold text-xs py-2 px-4 inline-flex justify-center w-full font-bold"
+        >
           Launch SvelteKit Dashboard →
         </a>
       </div>
-
     </div>
 
     <!-- Copyright -->
-    <div class="pt-8 border-t border-slate-300/60 flex flex-wrap items-center justify-between text-xs text-slate-500">
+    <div
+      class="pt-8 border-t border-slate-300/60 flex flex-wrap items-center justify-between text-xs text-slate-500"
+    >
       <p>© 2026 AURELIA. All rights reserved.</p>
       <div class="flex gap-6">
         <span>Privacy Policy</span>
